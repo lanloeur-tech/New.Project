@@ -1,0 +1,766 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pink: #ff1493;
+    --blue: #00bfff;
+    --yellow: #ffd21f;
+    --green: #35d07f;
+    --orange: #ff8a00;
+    --dark: #101225;
+}
+
+body {
+    font-family: "Kantumruy Pro", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #62d9ff 0%,
+            #a9edff 45%,
+            #7bc957 46%,
+            #4eaa43 100%
+        );
+
+    color: white;
+}
+
+
+/* ================= SCREEN ================= */
+
+.screen {
+    min-height: 100vh;
+    display: none;
+    position: relative;
+    padding: 30px 20px;
+
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ================= CLOUDS ================= */
+
+.cloud {
+    position: absolute;
+    font-size: 100px;
+    opacity: .8;
+    animation: cloudMove 15s linear infinite;
+    pointer-events: none;
+}
+
+.cloud1 {
+    top: 40px;
+    left: 5%;
+}
+
+.cloud2 {
+    top: 130px;
+    right: 8%;
+    font-size: 130px;
+}
+
+.cloud3 {
+    top: 250px;
+    left: 35%;
+    font-size: 80px;
+}
+
+@keyframes cloudMove {
+
+    0% {
+        transform: translateX(-30px);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(-30px);
+    }
+}
+
+
+/* ================= HOME LOGO ================= */
+
+.game-logo {
+    margin-top: 25px;
+    text-align: center;
+    z-index: 2;
+}
+
+.logo-icons {
+    font-size: 75px;
+    margin-bottom: 8px;
+
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.logo-small {
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    background: #7511a8;
+    border: 3px solid #d92bff;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    box-shadow: 0 5px 0 #42075d;
+}
+
+.game-logo h1 {
+    margin-top: 15px;
+
+    font-family: "Koulen", sans-serif;
+
+    font-size: clamp(50px, 8vw, 90px);
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        5px 5px 0 #101225,
+        8px 8px 0 #ff1493;
+}
+
+.game-logo h1 span {
+    color: #00d9ff;
+}
+
+.game-logo p {
+    margin-top: 15px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #102040;
+}
+
+
+/* ================= NAME ================= */
+
+.name-box {
+    width: min(500px, 90%);
+
+    margin: 25px auto;
+
+    z-index: 5;
+}
+
+.name-box label {
+    display: block;
+
+    color: #101225;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.name-box input {
+    width: 100%;
+
+    padding: 15px 20px;
+
+    border: 4px solid #101225;
+
+    border-radius: 30px;
+
+    outline: none;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 16px;
+
+    box-shadow: 0 6px 0 rgba(0,0,0,.25);
+}
+
+.name-box input:focus {
+    border-color: var(--pink);
+}
+
+
+/* ================= MAIN MENU ================= */
+
+.main-menu {
+    width: min(400px, 90%);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    z-index: 5;
+}
+
+.game-btn {
+    position: relative;
+
+    width: 100%;
+
+    padding: 17px 25px;
+
+    border: 5px solid #111425;
+
+    border-radius: 45px;
+
+    font-family: "Kantumruy Pro", sans-serif;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 0 #111425,
+        inset 0 3px 0 rgba(255,255,255,.4);
+
+    transition: .15s;
+
+    text-shadow: 2px 2px 0 rgba(0,0,0,.4);
+}
+
+.game-btn span {
+    margin-right: 10px;
+}
+
+.game-btn:hover {
+    transform: scale(1.04) translateY(-3px);
+}
+
+.game-btn:active {
+    transform: translateY(6px);
+
+    box-shadow:
+        0 2px 0 #111425;
+}
+
+.pink {
+    background: linear-gradient(#ff62b8, #ff008c);
+}
+
+.blue {
+    background: linear-gradient(#51e4ff, #009dd0);
+}
+
+.yellow {
+    background: linear-gradient(#ffe66b, #f5a800);
+}
+
+.green {
+    background: linear-gradient(#75efad, #20a95f);
+}
+
+.orange {
+    background: linear-gradient(#ffbd62, #ef6500);
+}
+
+
+/* ================= BOTTOM INFO ================= */
+
+.bottom-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    color: #101225;
+
+    font-weight: 700;
+
+    z-index: 5;
+}
+
+.bottom-info div {
+    padding: 8px 14px;
+
+    background: rgba(255,255,255,.75);
+
+    border: 2px solid #101225;
+
+    border-radius: 20px;
+}
+
+
+/* ================= GAME SCREEN ================= */
+
+#gameScreen {
+    background:
+        radial-gradient(
+            circle at top,
+            #6324a0,
+            #14152b 50%,
+            #061c2b
+        );
+
+    color: white;
+}
+
+.game-top {
+    width: min(1000px, 100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    padding: 10px 18px;
+
+    border: 2px solid white;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.game-title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.score {
+    padding: 10px 18px;
+
+    background: #191b3c;
+
+    border-radius: 20px;
+
+    font-weight: 800;
+}
+
+.progress-area {
+    width: min(800px, 90%);
+
+    margin-bottom: 25px;
+}
+
+.progress-text {
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+
+    background: #252742;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#progressFill {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff00cc,
+        #00d9ff
+    );
+
+    transition: .4s;
+}
+
+
+/* ================= QUESTION CARD ================= */
+
+.question-card {
+    width: min(800px, 92%);
+
+    padding: 40px;
+
+    background: rgba(18,20,40,.96);
+
+    border: 3px solid #34365b;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.4);
+}
+
+.question-icon {
+    font-size: 55px;
+}
+
+.funny-tag {
+    display: inline-block;
+
+    margin: 15px;
+
+    padding: 6px 14px;
+
+    background: #7511a8;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+}
+
+.question-card h2 {
+    line-height: 1.8;
+
+    font-size: 23px;
+
+    margin-bottom: 20px;
+}
+
+.love-text {
+    color: #ff65b5;
+
+    margin-bottom: 15px;
+}
+
+#answerInput {
+    width: 100%;
+
+    padding: 16px 20px;
+
+    border: 3px solid #4a4d78;
+
+    border-radius: 20px;
+
+    background: #0d0f21;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 17px;
+
+    font-family: inherit;
+}
+
+#answerInput:focus {
+    border-color: #00d9ff;
+}
+
+.answer-buttons {
+    display: flex;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.answer-buttons button {
+    border: none;
+
+    padding: 13px 25px;
+
+    border-radius: 20px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.hint-btn {
+    background: #ffe044;
+    color: #222;
+}
+
+.submit-btn {
+    background: #00c8ed;
+    color: #071525;
+}
+
+.answer-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.hint-box {
+    margin-top: 15px;
+
+    color: #ffe044;
+
+    min-height: 25px;
+}
+
+.feedback {
+    margin-top: 20px;
+
+    min-height: 30px;
+
+    font-weight: 800;
+
+    font-size: 18px;
+}
+
+.correct {
+    color: #46f58c;
+}
+
+.wrong {
+    color: #ff5c7c;
+}
+
+
+/* ================= GAME STATS ================= */
+
+.game-stats {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.game-stats div {
+    padding: 10px 18px;
+
+    background: #171a38;
+
+    border: 1px solid #35385e;
+
+    border-radius: 20px;
+}
+
+
+/* ================= RESULT ================= */
+
+#resultScreen,
+#optionsScreen,
+#creditsScreen {
+    background:
+        radial-gradient(
+            circle at top,
+            #6324a0,
+            #080916
+        );
+}
+
+.result-box,
+.popup-box {
+    width: min(600px, 92%);
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background: #121428;
+
+    border: 3px solid #34365b;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+
+.result-icon {
+    font-size: 90px;
+
+    animation: bounce 1.5s infinite;
+}
+
+.result-box h1,
+.popup-box h1 {
+    margin: 20px 0;
+
+    font-family: "Koulen", sans-serif;
+
+    font-size: 45px;
+}
+
+.final-score {
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+
+    margin: 30px 0;
+}
+
+.final-score div {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px;
+
+    background: #1c2040;
+
+    border-radius: 20px;
+}
+
+.final-score strong {
+    font-size: 35px;
+
+    color: #00d9ff;
+}
+
+.big-action {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #ff00cc,
+        #7d00ff
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.big-action:hover {
+    transform: scale(1.03);
+}
+
+.secondary {
+    background: #252944;
+}
+
+
+/* ================= OPTIONS ================= */
+
+.option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 0;
+
+    padding: 18px;
+
+    background: #1c2040;
+
+    border-radius: 15px;
+}
+
+.option-item button {
+    padding: 8px 18px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: #35d07f;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.credits p {
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+.credits hr {
+    margin: 25px 0;
+
+    border-color: #34365b;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 20px 12px;
+    }
+
+    .logo-icons {
+        font-size: 55px;
+    }
+
+    .game-logo h1 {
+        font-size: 52px;
+    }
+
+    .game-logo p {
+        font-size: 14px;
+    }
+
+    .game-btn {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .question-card {
+        padding: 25px 18px;
+    }
+
+    .question-card h2 {
+        font-size: 18px;
+    }
+
+    .answer-buttons {
+        flex-direction: column;
+    }
+
+    .answer-buttons button {
+        width: 100%;
+    }
+
+    .final-score {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

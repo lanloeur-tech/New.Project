@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ពាក្យបណ្ដៅ 404 🧠</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=Koulen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= HOME ================= -->
+
+<section id="homeScreen" class="screen active">
+
+    <div class="cloud cloud1">☁️</div>
+    <div class="cloud cloud2">☁️</div>
+    <div class="cloud cloud3">☁️</div>
+
+    <div class="game-logo">
+        <div class="logo-icons">🧠 💀</div>
+
+        <div class="logo-small">
+            NO BRAIN DAMAGE... MAYBE 😂
+        </div>
+
+        <h1>
+            ពាក្យបណ្ដៅ
+            <span>404</span>
+        </h1>
+
+        <p>
+            សាកល្បងខួរក្បាលរបស់អ្នក 🤯😂
+        </p>
+    </div>
+
+    <!-- Player name -->
+
+    <div class="name-box">
+        <label>👤 ឈ្មោះអ្នកលេង</label>
+
+        <input
+            type="text"
+            id="playerName"
+            placeholder="ឧ. LAN LOEUR"
+            maxlength="30"
+        >
+    </div>
+
+
+    <!-- Main Menu -->
+
+    <div class="main-menu">
+
+        <button class="game-btn pink" onclick="startRiddleGame()">
+            <span>🧠</span>
+            PLAY
+        </button>
+
+        <button class="game-btn blue" onclick="startCommandGame()">
+            <span>💻</span>
+            COMMAND LINE
+        </button>
+
+        <button class="game-btn yellow" onclick="openCertificate()">
+            <span>🏆</span>
+            CERTIFICATE
+        </button>
+
+        <button class="game-btn green" onclick="showOptions()">
+            <span>⚙️</span>
+            OPTIONS
+        </button>
+
+        <button class="game-btn orange" onclick="showCredits()">
+            <span>📜</span>
+            CREDITS
+        </button>
+
+    </div>
+
+
+    <!-- Game Info -->
+
+    <div class="bottom-info">
+
+        <div>🧠 50 Riddles</div>
+        <div>💻 Command Challenge</div>
+        <div>🏆 30+ = Certificate</div>
+        <div>😂 Funny Mode</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAME ================= -->
+
+<section id="gameScreen" class="screen">
+
+    <div class="game-top">
+
+        <button class="back-btn" onclick="goHome()">
+            ← HOME
+        </button>
+
+        <div class="game-title" id="gameTitle">
+            🧠 ពាក្យបណ្ដៅ
+        </div>
+
+        <div class="score">
+            ⭐ <span id="score">0</span>
+        </div>
+
+    </div>
+
+
+    <div class="progress-area">
+
+        <div class="progress-text">
+            Question <span id="questionNumber">1</span>
+            /
+            <span id="totalQuestions">50</span>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+    </div>
+
+
+    <div class="question-card">
+
+        <div class="question-icon" id="questionIcon">
+            🧠
+        </div>
+
+        <div class="funny-tag">
+            😂 FUNNY MODE
+        </div>
+
+        <h2 id="questionText">
+            សំណួរ
+        </h2>
+
+        <p id="loveText" class="love-text"></p>
+
+        <input
+            id="answerInput"
+            type="text"
+            placeholder="វាយចម្លើយរបស់អ្នក..."
+            autocomplete="off"
+        >
+
+        <div class="answer-buttons">
+
+            <button class="hint-btn" onclick="showHint()">
+                💡 HINT
+            </button>
+
+            <button class="submit-btn" onclick="checkAnswer()">
+                🚀 ANSWER
+            </button>
+
+        </div>
+
+        <div id="hintBox" class="hint-box"></div>
+
+        <div id="feedback" class="feedback"></div>
+
+    </div>
+
+
+    <div class="game-stats">
+
+        <div>
+            🔥 Combo:
+            <strong id="combo">0</strong>
+        </div>
+
+        <div>
+            ⭐ Score:
+            <strong id="gameScore">0</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESULT ================= -->
+
+<section id="resultScreen" class="screen">
+
+    <div class="result-box">
+
+        <div class="result-icon" id="resultIcon">
+            🏆
+        </div>
+
+        <h1 id="resultTitle">
+            GAME OVER
+        </h1>
+
+        <p id="resultMessage"></p>
+
+        <div class="final-score">
+
+            <div>
+                ⭐ SCORE
+                <strong id="finalScore">0</strong>
+            </div>
+
+            <div>
+                📝 QUESTIONS
+                <strong id="finalTotal">0</strong>
+            </div>
+
+        </div>
+
+        <button
+            id="certificateButton"
+            class="big-action"
+            onclick="openCertificate()"
+        >
+            🏆 GET CERTIFICATE
+        </button>
+
+        <button class="big-action secondary" onclick="goHome()">
+            🏠 HOME
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= OPTIONS ================= -->
+
+<section id="optionsScreen" class="screen">
+
+    <div class="popup-box">
+
+        <h1>⚙️ OPTIONS</h1>
+
+        <div class="option-item">
+            <span>😂 Funny Mode</span>
+            <button onclick="toggleFunnyMode()" id="funnyToggle">
+                ON
+            </button>
+        </div>
+
+        <div class="option-item">
+            <span>🔊 Sound Effect</span>
+            <button onclick="toggleSound()" id="soundToggle">
+                ON
+            </button>
+        </div>
+
+        <button class="big-action secondary" onclick="goHome()">
+            ← BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CREDITS ================= -->
+
+<section id="creditsScreen" class="screen">
+
+    <div class="popup-box credits">
+
+        <h1>📜 CREDITS</h1>
+
+        <p>
+            🧠 ពាក្យបណ្ដៅខ្មែរ
+        </p>
+
+        <p>
+            💻 Command Line Challenge
+        </p>
+
+        <p>
+            😂 Funny + Love Edition
+        </p>
+
+        <hr>
+
+        <h2>
+            Made with ❤️ + ☕ + Linux
+        </h2>
+
+        <p>
+            ពេលខួរក្បាល Error 404<br>
+            សូមកុំ Restart ខ្លួនឯង 😂
+        </p>
+
+        <button class="big-action secondary" onclick="goHome()">
+            ← BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
