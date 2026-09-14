@@ -4,313 +4,369 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ពាក្យបណ្ដៅ 404 🧠</title>
+    <title>ខួរក្បាល Error 404 🧠</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= HOME ================= -->
+<!-- =========================
+     BACKGROUND
+========================= -->
 
-<section id="homeScreen" class="screen active">
+<div class="game-world">
 
-    <div class="cloud cloud1">☁️</div>
-    <div class="cloud cloud2">☁️</div>
-    <div class="cloud cloud3">☁️</div>
+    <div class="sun">☀️</div>
 
-    <div class="game-logo">
-        <div class="logo-icons">🧠 💀</div>
+    <div class="cloud cloud-1">☁️</div>
+    <div class="cloud cloud-2">☁️</div>
+    <div class="cloud cloud-3">☁️</div>
 
-        <div class="logo-small">
-            NO BRAIN DAMAGE... MAYBE 😂
+    <div class="birds">🐦　🐦</div>
+
+    <div class="mountain mountain-back"></div>
+    <div class="mountain mountain-front"></div>
+
+    <div class="grass"></div>
+
+    <div class="tree tree-1">
+        <div class="tree-top">🌳</div>
+        <div class="tree-trunk"></div>
+    </div>
+
+    <div class="tree tree-2">
+        <div class="tree-top">🌳</div>
+        <div class="tree-trunk"></div>
+    </div>
+
+    <div class="tree tree-3">
+        <div class="tree-top">🌳</div>
+        <div class="tree-trunk"></div>
+    </div>
+
+</div>
+
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="top-bar">
+
+    <div class="logo">
+        🧠 <span>ខួរក្បាល</span>
+        <small>Error 404</small>
+    </div>
+
+    <div class="top-actions">
+
+        <button onclick="showHome()" class="small-btn">
+            🏠 Home
+        </button>
+
+        <button onclick="showStats()" class="small-btn">
+            🏆 Stats
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HOME SCREEN
+========================= -->
+
+<main id="homeScreen" class="screen">
+
+    <section class="hero">
+
+        <div class="hero-icons">
+            🧠 💀
+        </div>
+
+        <div class="badge">
+            😂 NO BRAIN DAMAGE... MAYBE
         </div>
 
         <h1>
-            ពាក្យបណ្ដៅ
-            <span>404</span>
+            ខួរក្បាល
+            <span>Error 404</span>
         </h1>
 
-        <p>
-            សាកល្បងខួរក្បាលរបស់អ្នក 🤯😂
+        <p class="subtitle">
+            កន្លែងដែលខួរក្បាលត្រូវធ្វើការ...
+            ប៉ុន្តែការឆ្លើយខុសគឺក៏អាចសើចបាន 😂
         </p>
-    </div>
-
-    <!-- Player name -->
-
-    <div class="name-box">
-        <label>👤 ឈ្មោះអ្នកលេង</label>
-
-        <input
-            type="text"
-            id="playerName"
-            placeholder="ឧ. LAN LOEUR"
-            maxlength="30"
-        >
-    </div>
 
 
-    <!-- Main Menu -->
+        <!-- PLAYER -->
 
-    <div class="main-menu">
+        <div class="player-box">
 
-        <button class="game-btn pink" onclick="startRiddleGame()">
-            <span>🧠</span>
-            PLAY
+            <label>👤 ឈ្មោះអ្នកលេង</label>
+
+            <input
+                type="text"
+                id="playerName"
+                placeholder="ឧ. LAN LOEUR"
+                maxlength="30"
+            >
+
+        </div>
+
+
+        <!-- GAME MENU -->
+
+        <div class="game-menu">
+
+            <!-- RIDDLE -->
+
+            <div class="game-card riddle-card">
+
+                <div class="card-icon">🧠</div>
+
+                <h2>ពាក្យបណ្ដៅខ្មែរ</h2>
+
+                <p>
+                    50 សំណួរ
+                    <br>
+                    គិត + សើច + ប្រើខួរក្បាល 😂
+                </p>
+
+                <div class="card-info">
+                    <span>🎯 50 Questions</span>
+                    <span>🏆 30+ = Certificate</span>
+                </div>
+
+                <button
+                    class="play-button purple"
+                    onclick="startGame('riddle')"
+                >
+                    ▶️ ចាប់ផ្ដើមលេង
+                </button>
+
+            </div>
+
+
+            <!-- COMMAND -->
+
+            <div class="game-card command-card">
+
+                <div class="card-icon">💻</div>
+
+                <h2>Command Line Challenge</h2>
+
+                <p>
+                    Linux + Server + Love
+                    <br>
+                    + កំប្លែង 😂❤️
+                </p>
+
+                <div class="card-info">
+                    <span>💻 30+ Questions</span>
+                    <span>🏆 30+ = Certificate</span>
+                </div>
+
+                <button
+                    class="play-button blue"
+                    onclick="startGame('command')"
+                >
+                    ▶️ ចាប់ផ្ដើមលេង
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="features">
+
+            <span>🔥 Combo</span>
+            <span>💡 Hint</span>
+            <span>😂 Funny Mode</span>
+            <span>🏆 Certificate</span>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     GAME SCREEN
+========================= -->
+
+<section id="gameScreen" class="game-screen hidden">
+
+    <div class="game-container">
+
+        <!-- GAME HEADER -->
+
+        <div class="game-header">
+
+            <button onclick="showHome()" class="back-btn">
+                ← Menu
+            </button>
+
+            <div class="game-title" id="gameTitle">
+                🧠 ពាក្យបណ្ដៅខ្មែរ
+            </div>
+
+            <div class="score-box">
+                ⭐ <span id="score">0</span>
+            </div>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="progress-area">
+
+            <div class="progress-text">
+                Question
+                <span id="questionNumber">1</span>
+                /
+                <span id="totalQuestions">50</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+        </div>
+
+
+        <!-- COMBO -->
+
+        <div id="comboMessage" class="combo-message">
+            🔥 Combo x0
+        </div>
+
+
+        <!-- QUESTION -->
+
+        <div class="question-card">
+
+            <div class="question-icon" id="questionIcon">
+                🧠
+            </div>
+
+            <div class="question-text" id="questionText">
+                សំណួរ...
+            </div>
+
+        </div>
+
+
+        <!-- ANSWERS -->
+
+        <div id="answers" class="answers"></div>
+
+
+        <!-- HINT -->
+
+        <button id="hintButton" class="hint-btn" onclick="useHint()">
+            💡 Hint
         </button>
 
-        <button class="game-btn blue" onclick="startCommandGame()">
-            <span>💻</span>
-            COMMAND LINE
-        </button>
 
-        <button class="game-btn yellow" onclick="openCertificate()">
-            <span>🏆</span>
-            CERTIFICATE
-        </button>
+        <!-- FUNNY MESSAGE -->
 
-        <button class="game-btn green" onclick="showOptions()">
-            <span>⚙️</span>
-            OPTIONS
-        </button>
-
-        <button class="game-btn orange" onclick="showCredits()">
-            <span>📜</span>
-            CREDITS
-        </button>
-
-    </div>
-
-
-    <!-- Game Info -->
-
-    <div class="bottom-info">
-
-        <div>🧠 50 Riddles</div>
-        <div>💻 Command Challenge</div>
-        <div>🏆 30+ = Certificate</div>
-        <div>😂 Funny Mode</div>
+        <div id="funnyMessage" class="funny-message">
+            🤔 ត្រៀមខួរក្បាល!
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- ================= GAME ================= -->
+<!-- =========================
+     STATS SCREEN
+========================= -->
 
-<section id="gameScreen" class="screen">
+<section id="statsScreen" class="stats-screen hidden">
 
-    <div class="game-top">
+    <div class="stats-card">
 
-        <button class="back-btn" onclick="goHome()">
-            ← HOME
+        <button onclick="showHome()" class="back-btn">
+            ← Home
         </button>
 
-        <div class="game-title" id="gameTitle">
-            🧠 ពាក្យបណ្ដៅ
+        <h1>🏆 Your Stats</h1>
+
+        <div class="stat-item">
+            <span>👤 Player</span>
+            <strong id="statName">-</strong>
         </div>
 
-        <div class="score">
-            ⭐ <span id="score">0</span>
+        <div class="stat-item">
+            <span>🧠 Riddle Best Score</span>
+            <strong id="riddleBest">0</strong>
         </div>
 
-    </div>
-
-
-    <div class="progress-area">
-
-        <div class="progress-text">
-            Question <span id="questionNumber">1</span>
-            /
-            <span id="totalQuestions">50</span>
+        <div class="stat-item">
+            <span>💻 Command Best Score</span>
+            <strong id="commandBest">0</strong>
         </div>
 
-        <div class="progress-bar">
-            <div id="progressFill"></div>
+        <div class="stat-item">
+            <span>🏆 Certificates</span>
+            <strong id="certCount">0</strong>
         </div>
 
-    </div>
-
-
-    <div class="question-card">
-
-        <div class="question-icon" id="questionIcon">
-            🧠
-        </div>
-
-        <div class="funny-tag">
-            😂 FUNNY MODE
-        </div>
-
-        <h2 id="questionText">
-            សំណួរ
-        </h2>
-
-        <p id="loveText" class="love-text"></p>
-
-        <input
-            id="answerInput"
-            type="text"
-            placeholder="វាយចម្លើយរបស់អ្នក..."
-            autocomplete="off"
-        >
-
-        <div class="answer-buttons">
-
-            <button class="hint-btn" onclick="showHint()">
-                💡 HINT
-            </button>
-
-            <button class="submit-btn" onclick="checkAnswer()">
-                🚀 ANSWER
-            </button>
-
-        </div>
-
-        <div id="hintBox" class="hint-box"></div>
-
-        <div id="feedback" class="feedback"></div>
-
-    </div>
-
-
-    <div class="game-stats">
-
-        <div>
-            🔥 Combo:
-            <strong id="combo">0</strong>
-        </div>
-
-        <div>
-            ⭐ Score:
-            <strong id="gameScore">0</strong>
-        </div>
+        <button onclick="resetStats()" class="reset-btn">
+            🗑️ Reset Stats
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- ================= RESULT ================= -->
+<!-- =========================
+     RESULT MODAL
+========================= -->
 
-<section id="resultScreen" class="screen">
+<div id="resultModal" class="modal hidden">
 
     <div class="result-box">
 
-        <div class="result-icon" id="resultIcon">
-            🏆
+        <div id="resultEmoji" class="result-emoji">
+            🎉
         </div>
 
         <h1 id="resultTitle">
-            GAME OVER
+            អស្ចារ្យ!
         </h1>
 
-        <p id="resultMessage"></p>
+        <p id="resultText">
+            អ្នកបាន...
+        </p>
 
         <div class="final-score">
-
-            <div>
-                ⭐ SCORE
-                <strong id="finalScore">0</strong>
-            </div>
-
-            <div>
-                📝 QUESTIONS
-                <strong id="finalTotal">0</strong>
-            </div>
-
+            ⭐ <span id="finalScore">0</span>
         </div>
 
-        <button
-            id="certificateButton"
-            class="big-action"
-            onclick="openCertificate()"
-        >
-            🏆 GET CERTIFICATE
-        </button>
+        <div id="certificateArea"></div>
 
-        <button class="big-action secondary" onclick="goHome()">
-            🏠 HOME
+        <button onclick="showHome()" class="menu-result-btn">
+            🏠 ត្រឡប់ទៅ Menu
         </button>
 
     </div>
 
-</section>
-
-
-<!-- ================= OPTIONS ================= -->
-
-<section id="optionsScreen" class="screen">
-
-    <div class="popup-box">
-
-        <h1>⚙️ OPTIONS</h1>
-
-        <div class="option-item">
-            <span>😂 Funny Mode</span>
-            <button onclick="toggleFunnyMode()" id="funnyToggle">
-                ON
-            </button>
-        </div>
-
-        <div class="option-item">
-            <span>🔊 Sound Effect</span>
-            <button onclick="toggleSound()" id="soundToggle">
-                ON
-            </button>
-        </div>
-
-        <button class="big-action secondary" onclick="goHome()">
-            ← BACK
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- ================= CREDITS ================= -->
-
-<section id="creditsScreen" class="screen">
-
-    <div class="popup-box credits">
-
-        <h1>📜 CREDITS</h1>
-
-        <p>
-            🧠 ពាក្យបណ្ដៅខ្មែរ
-        </p>
-
-        <p>
-            💻 Command Line Challenge
-        </p>
-
-        <p>
-            😂 Funny + Love Edition
-        </p>
-
-        <hr>
-
-        <h2>
-            Made with ❤️ + ☕ + Linux
-        </h2>
-
-        <p>
-            ពេលខួរក្បាល Error 404<br>
-            សូមកុំ Restart ខ្លួនឯង 😂
-        </p>
-
-        <button class="big-action secondary" onclick="goHome()">
-            ← BACK
-        </button>
-
-    </div>
-
-</section>
+</div>
 
 
 <script src="script.js"></script>

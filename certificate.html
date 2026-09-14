@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Achievement - BRAIN 404</title>
+    <!-- Premium Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            background-color: #1e1e2e;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Certificate Container (A4 Landscape Scale) */
+        .cert-container {
+            position: relative;
+            width: 950px;
+            height: 650px;
+            background: #ffffff;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+            overflow: hidden;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Top Right Ribbons */
+        .ribbon-1 {
+            position: absolute;
+            top: -40px;
+            right: -80px;
+            width: 580px;
+            height: 140px;
+            background: #0a2f27 !important;
+            transform: rotate(25deg);
+            z-index: 1;
+        }
+        .ribbon-2 {
+            position: absolute;
+            top: 60px;
+            right: -100px;
+            width: 600px;
+            height: 90px;
+            background: #114b3e !important;
+            transform: rotate(25deg);
+            z-index: 2;
+        }
+
+        /* Gold Badge */
+        .gold-badge {
+            position: absolute;
+            top: 100px;
+            right: 280px;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #ffe066, #d4af37, #996515) !important;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #ffffff;
+            z-index: 3;
+            color: #1a1a1a;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        .gold-badge .stars { font-size: 11px; }
+        .gold-badge .year { font-size: 14px; font-weight: 800; margin: 2px 0; }
+        .gold-badge .text { font-size: 9px; letter-spacing: 1.5px; }
+
+        /* Main Content Header */
+        .content {
+            position: relative;
+            z-index: 4;
+        }
+
+        .header-title {
+            font-family: 'Cinzel', serif;
+            font-size: 46px;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: 4px;
+            line-height: 1;
+        }
+        .header-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            color: #475569;
+            letter-spacing: 6px;
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        /* Certificate Body */
+        .cert-body {
+            position: relative;
+            z-index: 4;
+            margin-top: 20px;
+        }
+
+        .present-text {
+            font-size: 18px;
+            color: #64748b;
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .user-name {
+            font-family: 'Cinzel', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #0a2f27;
+            margin: 15px 0 10px 0;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #0f172a;
+            display: inline-block;
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .description {
+            margin-top: 15px;
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        /* Footer & Signatures */
+        .footer {
+            position: relative;
+            z-index: 4;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .sig-block {
+            text-align: center;
+            width: 220px;
+        }
+        
+        .signature-text {
+            font-family: 'Great Vibes', cursive;
+            font-size: 44px;
+            color: #0a2f27;
+            line-height: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .sig-line {
+            border-top: 2px solid #94a3b8;
+            margin-bottom: 8px;
+        }
+        .sig-title {
+            font-size: 13px;
+            color: #0f172a;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .sig-subtitle {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
+        }
+
+        /* Buttons */
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn-print { background: #114b3e; color: #fff; }
+        .btn-back { background: #334155; color: #fff; }
+
+        @page {
+            size: A4 landscape;
+            margin: 0;
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .actions { display: none !important; }
+            .cert-container { box-shadow: none; width: 100vw; height: 100vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cert-container">
+        <div class="ribbon-1"></div>
+        <div class="ribbon-2"></div>
+
+        <div class="gold-badge">
+            <div class="stars">★ ★ ★</div>
+            <div class="year">2026</div>
+            <div class="text">AWARD</div>
+            <div class="stars">★ ★ ★</div>
+        </div>
+
+        <div class="content">
+            <div class="header-title">CERTIFICATE</div>
+            <div class="header-subtitle">OF ACHIEVEMENT</div>
+        </div>
+
+        <div class="cert-body">
+            <div class="present-text">This Certificate is Proudly Presented To</div>
+            <div class="user-name" id="certName">Winner Name</div>
+            <div class="description">
+                For successfully completing all levels of the Khmer Riddles and Logic Quiz challenges on the <b>BRAIN 404</b> platform with outstanding intelligence and excellence.
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="sig-block">
+                <div class="sig-line"></div>
+                <div class="sig-title" id="certDate">Date: 14 Sep 2026</div>
+                <div class="sig-subtitle">Date of Issuance</div>
+            </div>
+            <div class="sig-block">
+                <div class="signature-text">Brain 404</div>
+                <div class="sig-line"></div>
+                <div class="sig-title">BRAIN 404 Team</div>
+                <div class="sig-subtitle">Authorized Game Creator</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button class="btn btn-print" onclick="window.print()">🖨️ Print / Save PDF</button>
+        <a href="index.html" class="btn btn-back">⬅️ Back to Home</a>
+    </div>
+
+    <script>
+        const today = new Date();
+        const dateStr = today.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        document.getElementById('certDate').innerText = 'Date: ' + dateStr;
+    </script>
+</body>
+</html>
